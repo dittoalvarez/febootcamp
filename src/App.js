@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import txt from "../src/txt";
+import txtxt from "../src/txtxt";
+export default function App() {
+  const [show, setShow] = useState(txt);
 
-function App() {
+  const txt1 = txt;
+  const txt2 = txtxt;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <br />
+      <br />
+
+      <div>
+        <button
+          onClick={() => {
+            setShow(txt1);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          TEXT ONE
+        </button>
+        <button
+          onClick={() => {
+            setShow(txt2);
+          }}
+        >
+          TEXT TWO
+        </button>
+      </div>
+      <br />
+      <br />
+
+      <div>
+        <text>{show}</text>
+      </div>
     </div>
   );
 }
-
-export default App;
